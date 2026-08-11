@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light only">
+<title>Vinitha Rajpurohit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Newsreader:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#181611;
+    --sand:#e7dcc3;
+    --sand-deep:#d9cba3;
+    --indigo:#1f2c47;
+    --indigo-deep:#141d30;
+    --saffron:#c1852c;
+    --oxblood:#6d2a2a;
+    --gold-line:#a8935f;
+    --sand-70: rgba(231,220,195,0.7);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; background:#e7dcc3; color-scheme:light;}
+  body{
+    margin:0;
+    background:var(--sand);
+    color:var(--ink);
+    font-family:'Newsreader', serif;
+    font-size:18px;
+    line-height:1.6;
+    color-scheme:light;
+  }
+  a{color:inherit;}
+  ::selection{background:var(--saffron); color:var(--sand);}
+
+  .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--saffron);
+  }
+
+  /* HERO — title card */
+  .hero{
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(193,133,44,0.18), transparent 60%),
+      var(--indigo-deep);
+    color:var(--sand);
+    min-height:92vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:6vh 6vw;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:28px;
+    border:1px solid rgba(168,147,95,0.35);
+    pointer-events:none;
+  }
+  .hero .cert{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--gold-line);
+    margin-bottom:2.2rem;
+    animation:fadeUp .9s ease .15s both;
+  }
+  .hero h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(3rem, 9vw, 6.4rem);
+    line-height:0.98;
+    margin:0;
+    letter-spacing:-0.01em;
+    animation:fadeUp 1s ease .3s both;
+  }
+  .hero h1 em{
+    font-style:italic;
+    font-weight:400;
+    color:var(--saffron);
+  }
+  .hero .role{
+    font-family:'Newsreader', serif;
+    font-style:italic;
+    font-size:clamp(1.05rem, 2.4vw, 1.4rem);
+    color:var(--sand-70);
+    margin-top:1.6rem;
+    max-width:36rem;
+    animation:fadeUp 1s ease .5s both;
+  }
+  .hero .base{
+    margin-top:2.6rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-line);
+    animation:fadeUp 1s ease .65s both;
+  }
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(14px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero .cert,.hero h1,.hero .role,.hero .base{animation:none;}
+  }
+
+  section{
+    padding:7rem 8vw;
+    max-width:1000px;
+    margin:0 auto;
+  }
+  .rule{
+    height:1px;
+    background:linear-gradient(90deg, transparent, var(--gold-line), transparent);
+    max-width:1000px;
+    margin:0 auto;
+  }
+
+  /* ABOUT */
+  .about p{
+    font-size:clamp(1.15rem, 2vw, 1.4rem);
+    max-width:42rem;
+  }
+  .about .label{margin-bottom:1.2rem; display:block;}
+  .about .skills{
+    margin-top:2.2rem;
+    font-size:1rem;
+    color:rgba(24,22,17,0.75);
+    max-width:34rem;
+  }
+
+  /* FILMOGRAPHY */
+  .work .label{display:block; margin-bottom:2.5rem;}
+  .entry{
+    display:grid;
+    grid-template-columns:5rem 1fr;
+    gap:1.5rem;
+    padding:2.2rem 0;
+    border-top:1px solid rgba(24,22,17,0.15);
+  }
+  .entry:last-child{border-bottom:1px solid rgba(24,22,17,0.15);}
+  .entry .year{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--oxblood);
+    letter-spacing:0.06em;
+    padding-top:0.3rem;
+  }
+  .entry h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(1.5rem, 3vw, 2rem);
+    margin:0 0 0.4rem 0;
+  }
+  .entry .credit{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--saffron);
+    margin-bottom:0.8rem;
+    display:block;
+  }
+  .entry p{
+    margin:0;
+    font-size:1.05rem;
+    max-width:34rem;
+    color:rgba(24,22,17,0.85);
+  }
+
+  /* BTS GALLERY */
+  .bts-gallery{
+    display:flex;
+    gap:0.8rem;
+    overflow-x:auto;
+    margin-top:1.6rem;
+    padding-bottom:0.6rem;
+    -webkit-overflow-scrolling:touch;
+  }
+  .bts-gallery img{
+    height:130px;
+    width:auto;
+    flex:0 0 auto;
+    object-fit:cover;
+    border:1px solid rgba(24,22,17,0.15);
+    cursor:pointer;
+    transition:transform .2s ease;
+  }
+  .bts-gallery img:hover{ transform:translateY(-3px); }
+  .bts-caption{
+    display:block;
+    margin-top:0.5rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:rgba(24,22,17,0.5);
+  }
+  #lightbox{
+    display:none;
+    position:fixed; inset:0; z-index:900;
+    background:rgba(20,29,48,0.96);
+    align-items:center; justify-content:center;
+    padding:5vw;
+  }
+  #lightbox.open{ display:flex; }
+  #lightbox img{ max-width:90vw; max-height:80vh; box-shadow:0 20px 50px rgba(0,0,0,0.5); }
+  #lightbox .lb-close{
+    position:absolute; top:20px; right:24px;
+    color:#e7dcc3; font-family:'IBM Plex Mono',monospace; font-size:14px;
+    background:none; border:1px solid rgba(231,220,195,0.4); padding:8px 14px;
+    cursor:pointer; border-radius:2px;
+  }
+  #lightbox .lb-prev, #lightbox .lb-next{
+    position:absolute; top:50%; transform:translateY(-50%);
+    color:#e7dcc3; background:none; border:1px solid rgba(231,220,195,0.4);
+    font-size:20px; width:44px; height:44px; border-radius:50%;
+    cursor:pointer;
+  }
+  #lightbox .lb-prev{ left:16px; }
+  #lightbox .lb-next{ right:16px; }
+
+  /* CREDITS / LINKS */
+  .credits{
+    background:var(--indigo);
+    color:var(--sand);
+    max-width:none;
+    padding:6rem 8vw;
+  }
+  .credits-inner{max-width:1000px; margin:0 auto;}
+  .credits .label{color:var(--gold-line); display:block; margin-bottom:2rem;}
+  .linklist{
+    list-style:none;
+    margin:0; padding:0;
+    display:flex;
+    flex-direction:column;
+  }
+  .linklist li{border-top:1px solid rgba(231,220,195,0.18);}
+  .linklist li:last-child{border-bottom:1px solid rgba(231,220,195,0.18);}
+  .linklist a{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:1.4rem 0.2rem;
+    text-decoration:none;
+    font-family:'Fraunces', serif;
+    font-size:clamp(1.3rem, 3vw, 1.8rem);
+    transition:color .25s ease, padding-left .25s ease;
+  }
+  .linklist a:hover{color:var(--saffron); padding-left:0.6rem;}
+  .linklist .arrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+    color:var(--gold-line);
+  }
+
+  footer{
+    text-align:center;
+    padding:3.5rem 8vw 4rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:rgba(24,22,17,0.5);
+  }
+
+  @media (max-width:640px){
+    section{padding:4.5rem 7vw;}
+    .entry{grid-template-columns:1fr; gap:0.4rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Vinitha<br><em>Rajpurohit</em></h1>
+  <p class="role">Filmmaker. Researcher. Journalist. Storyteller.</p>
+  <p class="base">Ahmedabad, Gujarat</p>
+</div>
+
+<section class="about">
+  <span class="label">A Little About Me</span>
+  <p>I've been the person buried in old files trying to piece a story together, and the person on set at odd hours making sure things actually happen. I've researched for national podcasts, helped a feature film go from paper to screen, and volunteered with a few NGOs along the way. These days I'm in Ahmedabad, open to whatever's next. Research, content, coordination, storytelling.</p>
+</section>
+
+<!-- QUOTES: leave space here for quotes Vinitha will share -->
+
+<div class="rule"></div>
+
+<section class="work">
+  <span class="label">Featured Work</span>
+
+  <div class="entry">
+    <span class="year">Through 2026</span>
+    <div>
+      <span class="credit">Researcher &amp; Production</span>
+      <h3><a href="https://youtube.com/playlist?list=PLGqF2Eq4iV78OTrFs9XhWiFxwgVudE8Sd" target="_blank" rel="noopener" style="color:inherit; text-decoration:none;">The GDP Podcast</a></h3>
+      <p>A government-focused podcast. Prepared research briefs and interview documents for the host ahead of each episode.</p>
+      <div class="bts-gallery" style="grid-column:1/-1;">
+        <img src="images/gdp-parliament.jpg" alt="On location at Parliament for a GDP Podcast shoot" loading="lazy">
+      </div>
+      <span class="bts-caption">On location at Parliament, GDP Podcast shoot &middot; tap to enlarge</span>
+    </div>
+  </div>
+
+  <div class="entry">
+    <span class="year">2025</span>
+    <div>
+      <span class="credit">Director's Assistant, Post-Production Supervisor &amp; PR Content</span>
+      <h3>The Great Shamsuddin Family</h3>
+      <p>Jio Hotstar. Coordinated across departments from pre-production through final delivery, and worked with the Jio Hotstar PR team writing promotional and PR scripts for the release campaign.</p>
+      <div class="bts-gallery" style="grid-column:1/-1;">
+        <img src="images/bts-01.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+        <img src="images/bts-02.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+        <img src="images/bts-03.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+        <img src="images/bts-04.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+        <img src="images/bts-05.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+        <img src="images/bts-06.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+        <img src="images/bts-07.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+        <img src="images/bts-08.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+        <img src="images/bts-09.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+        <img src="images/bts-10.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+        <img src="images/bts-11.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+        <img src="images/bts-12.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+      </div>
+      <span class="bts-caption">Behind the scenes &middot; tap a photo to enlarge</span>
+    </div>
+  </div>
+
+  <div class="entry">
+    <span class="year">2022–24</span>
+    <div>
+      <span class="credit">Researcher &amp; Director's Assistant</span>
+      <h3>Unreleased Documentary</h3>
+      <p>Long-form investigative research for a documentary examining the murder of Sidhu Moose Wala.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <span class="year">2024</span>
+    <div>
+      <span class="credit">Researcher</span>
+      <h3>Dhawan Karenge</h3>
+      <p>Jio Cinema, hosted by Shikhar Dhawan. Full guest research and script preparation.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <span class="year">2021</span>
+    <div>
+      <span class="credit">Production Intern</span>
+      <h3>Filmart Productions, Delhi</h3>
+      <p>First on-set production experience.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <span class="year">2019–21</span>
+    <div>
+      <span class="credit">Volunteer Teacher</span>
+      <h3>Make A Difference</h3>
+      <p>Volunteer teaching with the NGO.</p>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section class="about">
+  <span class="label">Skills &amp; Languages</span>
+  <p class="skills">Adobe Premiere Pro &middot; DaVinci Resolve &middot; Illustrator &middot; Photoshop &middot; Microsoft Excel &amp; Word</p>
+  <p class="skills">Kannada &middot; Marwari &middot; English &middot; Hindi</p>
+</section>
+
+<div class="credits">
+  <div class="credits-inner">
+    <span class="label">Credits &amp; Elsewhere</span>
+    <ul class="linklist">
+      <li><a href="https://www.imdb.com/name/nm18243765/" target="_blank" rel="noopener">IMDb <span class="arrow">↗</span></a></li>
+      <li><a href="https://www.acmodasi.in/amdb/person/5853497-vinitha-rajpurohit" target="_blank" rel="noopener">Acmodasi <span class="arrow">↗</span></a></li>
+      <li><a href="https://www.linkedin.com/in/vinitha-rajpurohit-a10212251" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a></li>
+      <li><a href="https://vs.co/0kc67l04" target="_blank" rel="noopener">VSCO <span class="arrow">↗</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<section class="about" style="text-align:center;">
+  <span class="label" style="display:block; margin-bottom:1.5rem;">Get in Touch</span>
+  <a href="mailto:vinithag0601@gmail.com" style="font-family:'Fraunces', serif; font-size:clamp(1.4rem, 4vw, 2.2rem); text-decoration:none; color:var(--oxblood); border-bottom:1px solid var(--gold-line); padding-bottom:0.2rem;">vinithag0601@gmail.com</a>
+</section>
+
+<footer>Vinitha Rajpurohit</footer>
+
+<div id="lightbox">
+  <button class="lb-close" onclick="closeLightbox()">Close &times;</button>
+  <button class="lb-prev" onclick="navLightbox(-1)">&#8249;</button>
+  <img id="lightbox-img" src="" alt="Behind the scenes">
+  <button class="lb-next" onclick="navLightbox(1)">&#8250;</button>
+</div>
+
+<script>
+(function(){
+  var galleryImgs = Array.prototype.slice.call(document.querySelectorAll('.bts-gallery img'));
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  var current = 0;
+
+  galleryImgs.forEach(function(img, i){
+    img.addEventListener('click', function(){
+      current = i;
+      lbImg.src = img.src;
+      lb.classList.add('open');
+    });
+  });
+
+  window.closeLightbox = function(){ lb.classList.remove('open'); };
+  window.navLightbox = function(dir){
+    current = (current + dir + galleryImgs.length) % galleryImgs.length;
+    lbImg.src = galleryImgs[current].src;
+  };
+  lb.addEventListener('click', function(e){ if(e.target === lb){ closeLightbox(); } });
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowRight') navLightbox(1);
+    if(e.key === 'ArrowLeft') navLightbox(-1);
+  });
+})();
+</script>
+</body>
+</html>
