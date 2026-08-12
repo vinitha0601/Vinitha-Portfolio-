@@ -180,33 +180,73 @@
   }
 
   /* BTS GALLERY */
+  .preview-thumb{
+    margin-top:1rem;
+    width:160px;
+  }
+  .preview-thumb img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border:1px solid rgba(24,22,17,0.15);
+    cursor:pointer;
+    display:block;
+  }
   .bts-gallery{
-    display:flex;
-    gap:0.8rem;
-    overflow-x:auto;
-    margin-top:1.6rem;
-    padding-bottom:0.6rem;
-    -webkit-overflow-scrolling:touch;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:0.7rem;
+    margin-top:1rem;
   }
   .bts-gallery img{
-    height:130px;
-    width:auto;
-    flex:0 0 auto;
+    width:100%;
+    aspect-ratio:1/1;
     object-fit:cover;
     border:1px solid rgba(24,22,17,0.15);
     cursor:pointer;
     transition:transform .2s ease;
+    display:block;
   }
   .bts-gallery img:hover{ transform:translateY(-3px); }
   .bts-caption{
     display:block;
-    margin-top:0.5rem;
+    margin-top:0.6rem;
     font-family:'IBM Plex Mono', monospace;
     font-size:11px;
     letter-spacing:0.08em;
     text-transform:uppercase;
     color:rgba(24,22,17,0.5);
   }
+
+  /* CASE STUDY ACCORDION */
+  .case-study{ margin-top:1.2rem; }
+  .case-study summary{
+    list-style:none;
+    cursor:pointer;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--saffron);
+    border-bottom:1px solid var(--saffron);
+    display:inline-block;
+    padding-bottom:2px;
+  }
+  .case-study summary::-webkit-details-marker{ display:none; }
+  .case-study summary:after{ content:" +"; }
+  .case-study[open] summary:after{ content:" \2212"; }
+  .case-study .case-body{
+    margin-top:1.2rem;
+    padding-top:1.2rem;
+    border-top:1px dashed rgba(24,22,17,0.2);
+  }
+  .case-study .case-body p{
+    font-size:1rem;
+    max-width:36rem;
+    color:rgba(24,22,17,0.85);
+    margin:0 0 1rem 0;
+  }
+
   #lightbox{
     display:none;
     position:fixed; inset:0; z-index:900;
@@ -307,10 +347,19 @@
       <span class="credit">Researcher &amp; Production</span>
       <h3><a href="https://youtube.com/playlist?list=PLGqF2Eq4iV78OTrFs9XhWiFxwgVudE8Sd" target="_blank" rel="noopener" style="color:inherit; text-decoration:none;">The GDP Podcast</a></h3>
       <p>A government-focused podcast. Prepared research briefs and interview documents for the host ahead of each episode.</p>
-      <div class="bts-gallery" style="grid-column:1/-1;">
-        <img src="images/gdp-parliament.jpg" alt="On location at Parliament for a GDP Podcast shoot" loading="lazy">
-      </div>
-      <span class="bts-caption">On location at Parliament, GDP Podcast shoot &middot; tap to enlarge</span>
+      <div class="preview-thumb"><img src="images/gdp-parliament.jpg" alt="On location at Parliament for a GDP Podcast shoot" loading="lazy"></div>
+      <details class="case-study">
+        <summary>Know More</summary>
+        <div class="case-body">
+          <p>On the GDP Podcast, I was the only researcher, building every guest's research from scratch. For each one, I'd start with the basics: who they are, their family, their education, the arc of their career, pulled together from old interviews, articles, YouTube videos, their social media, LinkedIn, and government sources where relevant.</p>
+          <p>Then the research turned to policy. The show's whole idea was to carry government schemes and policy to a wider audience through people who actually lived them: politicians, actors, CEOs, astronauts, authors, military officers, bureaucrats, whoever the guest happened to be. I'd dig into which schemes they'd used or worked on, something like Startup India or semiconductor policy, and get the real numbers behind it, not just the headline version.</p>
+          <p>I also drafted talking points and a rough shape for each interview, which the senior team would review and adjust. Beyond research, I helped cut long interviews down into reels for social media, working with the editor to find the moments that would pull people toward the full episode, and did a pass for grammar and factual slips before anything went out.</p>
+          <div class="bts-gallery">
+            <img src="images/gdp-parliament.jpg" alt="On location at Parliament for a GDP Podcast shoot" loading="lazy">
+          </div>
+          <span class="bts-caption">On location at Parliament, GDP Podcast shoot &middot; tap to enlarge</span>
+        </div>
+      </details>
     </div>
   </div>
 
@@ -320,14 +369,23 @@
       <span class="credit">Director's Assistant, Post-Production Supervisor &amp; PR Content</span>
       <h3>The Great Shamsuddin Family</h3>
       <p>Jio Hotstar. Coordinated across departments from pre-production through final delivery, and worked with the Jio Hotstar PR team writing promotional and PR scripts for the release campaign.</p>
-      <div class="bts-gallery" style="grid-column:1/-1;">
-        <img src="images/bts-02.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
-        <img src="images/bts-03.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
-        <img src="images/bts-10.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
-        <img src="images/bts-11.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
-        <img src="images/bts-12.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
-      </div>
-      <span class="bts-caption">Behind the scenes &middot; tap a photo to enlarge</span>
+      <div class="preview-thumb"><img src="images/bts-02.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy"></div>
+      <details class="case-study">
+        <summary>Know More</summary>
+        <div class="case-body">
+          <p>My role kept growing as the production did. In pre-production in Delhi, I worked as director's assistant: researching character and period detail, and making sure costume, makeup, camera, direction, production, and sound all stayed aligned with the director's vision. On shoot days, I was there to support the director through last-minute script changes and keep the day moving.</p>
+          <p>When the production shifted to Mumbai for post, I stayed on as director's assistant, tracking edit notes and coordinating between edit, sound, and DI, then taking on censor board submissions. That grew into a promotion to post-production supervisor, where I made sure the censor certificate came through on time, ran point on screenings across Delhi, Mumbai, and eventually worldwide, and became the main contact between our team and Jio Hotstar for every deliverable.</p>
+          <p>Later, I also ran the PR and social media side: daily calls with the Jio Hotstar team, coordinating between the actors and the network, and making sure every script, video, and collaboration went out on schedule. My work on the film officially wrapped in January 2026, and it's still screening internationally.</p>
+          <div class="bts-gallery">
+            <img src="images/bts-02.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+            <img src="images/bts-03.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+            <img src="images/bts-10.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+            <img src="images/bts-11.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+            <img src="images/bts-12.jpg" alt="Behind the scenes, The Great Shamsuddin Family" loading="lazy">
+          </div>
+          <span class="bts-caption">Behind the scenes &middot; tap a photo to enlarge</span>
+        </div>
+      </details>
     </div>
   </div>
 
@@ -350,6 +408,12 @@
       <span class="credit">Researcher</span>
       <h3>Dhawan Karenge</h3>
       <p>Jio Cinema, hosted by Shikhar Dhawan. Full guest research and script preparation.</p>
+      <details class="case-study">
+        <summary>Know More</summary>
+        <div class="case-body">
+          <p>On Dhawan Karenge, I worked as a researcher. I didn't write the script myself, but my research formed the base the entire script was built on.</p>
+        </div>
+      </details>
     </div>
   </div>
 
@@ -359,27 +423,41 @@
       <span class="credit">Volunteer Photographer</span>
       <h3>Delhi Kabir Fest</h3>
       <p>Shot the festival as a volunteer.</p>
-      <div class="bts-gallery" style="grid-column:1/-1;">
-        <img src="images/kabir-01.jpg" alt="Shooting at Delhi Kabir Fest" loading="lazy">
-        <img src="images/kabir-02.jpg" alt="Shooting at Delhi Kabir Fest" loading="lazy">
-      </div>
-      <span class="bts-caption">Delhi Kabir Fest &middot; tap to enlarge</span>
+      <div class="preview-thumb"><img src="images/kabir-01.jpg" alt="Shooting at Delhi Kabir Fest" loading="lazy"></div>
+      <details class="case-study">
+        <summary>Know More</summary>
+        <div class="case-body">
+          <p>I volunteered with Manzil Mystics, an organization that teaches through music and partners with government schools across India and abroad. At the Delhi Kabir Festival, I volunteered with the camera department, and I've continued volunteering with them on and off since.</p>
+          <div class="bts-gallery">
+            <img src="images/kabir-01.jpg" alt="Shooting at Delhi Kabir Fest" loading="lazy">
+            <img src="images/kabir-02.jpg" alt="Shooting at Delhi Kabir Fest" loading="lazy">
+          </div>
+          <span class="bts-caption">Delhi Kabir Fest &middot; tap to enlarge</span>
+        </div>
+      </details>
     </div>
   </div>
 
   <div class="entry">
-    <span class="year">2021</span>
+    <span class="year">Jan&ndash;Jun 2022</span>
     <div>
       <span class="credit">Production Intern</span>
       <h3>Filmart Productions, Delhi</h3>
       <p>First on-set production experience.</p>
-      <div class="bts-gallery" style="grid-column:1/-1;">
-        <img src="images/filmart-01.jpg" alt="Filmikafila student film festival at Filmart" loading="lazy">
-        <img src="images/filmart-02.jpg" alt="Filmikafila student film festival at Filmart" loading="lazy">
-        <img src="images/filmart-03.jpg" alt="Filmart team retreat" loading="lazy">
-        <img src="images/filmart-04.jpg" alt="Filmart team retreat" loading="lazy">
-      </div>
-      <span class="bts-caption">Filmikafila festival &amp; team retreat &middot; tap to enlarge</span>
+      <div class="preview-thumb"><img src="images/filmart-01.jpg" alt="Filmy Kafila student film festival at Filmart" loading="lazy"></div>
+      <details class="case-study">
+        <summary>Know More</summary>
+        <div class="case-body">
+          <p>My first production job, right after college. I handled Filmart's social media, sat on the core team, went out on shoots, and picked up a bit of editing along the way, trying to learn a little of every department. I was the first woman on the team at the time, and during my stint there we organized Filmart's first student film festival, Filmy Kafila, which turned out to be a big success. Filmart's stayed a kind of extended family since.</p>
+          <div class="bts-gallery">
+            <img src="images/filmart-01.jpg" alt="Filmy Kafila student film festival at Filmart" loading="lazy">
+            <img src="images/filmart-02.jpg" alt="Filmy Kafila student film festival at Filmart" loading="lazy">
+            <img src="images/filmart-03.jpg" alt="Filmart team retreat" loading="lazy">
+            <img src="images/filmart-04.jpg" alt="Filmart team retreat" loading="lazy">
+          </div>
+          <span class="bts-caption">Filmy Kafila festival &amp; team retreat &middot; tap to enlarge</span>
+        </div>
+      </details>
     </div>
   </div>
 
@@ -389,6 +467,12 @@
       <span class="credit">Volunteer Teacher</span>
       <h3>Make A Difference</h3>
       <p>Volunteer teaching with the NGO.</p>
+      <details class="case-study">
+        <summary>Know More</summary>
+        <div class="case-body">
+          <p>I taught English at Make A Difference from 2019 to 2021, working with kids at shelter homes in Daryaganj, Delhi. I taught classes eight and nine, and partway through, sessions moved to Zoom. Within two years, all my students passed their tenth boards, and that's when I stepped back.</p>
+        </div>
+      </details>
     </div>
   </div>
 </section>
@@ -429,7 +513,7 @@
 
 <script>
 (function(){
-  var galleryImgs = Array.prototype.slice.call(document.querySelectorAll('.bts-gallery img'));
+  var galleryImgs = Array.prototype.slice.call(document.querySelectorAll('.bts-gallery img, .preview-thumb img'));
   var lb = document.getElementById('lightbox');
   var lbImg = document.getElementById('lightbox-img');
   var current = 0;
